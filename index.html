@@ -4,70 +4,116 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ds 홈페이지</title>
+    <title>ch5_layout</title>
+    <style>
+        h1 {
+            color: black;
+            background-color: paleturquoise;
+        }
+    </style>
 </head>
 
 <body>
-    <h1><b>ds 홈페이지에 오신 것을 환영합니다!</b></h1>
+    <div id="main-page">
+        <header id="main-header">
+            <hgroup>
+                <h1><b>DS 홈페이지에 오신 것을 환영합니다!</b></h1>
+            </hgroup>
 
-    <img src="character.jpeg" width="300">
+            <img src="https://media.tfnmobile.com/wp-content/uploads/2025/11/chiitowel7_charaimg.png" width="450">
+        </header>
 
-    <hr>
-    <h2>과제물</h2>
-    <a href="chapter3/Text_Header.html">텍스트 헤더<br></a>
-    <a href="chapter3/3text_content.html">텍스트<br></a>
-    <a href="chapter3/nested_list.html"><br>리스트</a>
+        <hr>
+        <nav id="main=navi">
+            <h2>목차</h2>
+            <input type="button" value="과제물"><br>
+            <input type="button" value="오늘의 저녁 메뉴 추천"><br>
+            <input type="button" value="전공 시간표"><br>
+        </nav>
 
-    <hr>
-    <h2>오늘의 저녁 메뉴 추천</h2>
-    <select>
-        <optgroup label="한식">
-            <option>비빔밥</option>
-            <option>된장찌개</option>
-            <option>제육볶음</option>
-        </optgroup>
-        <optgroup label="양식">
-            <option>피자</option>
-            <option>파스타</option>
-        </optgroup>
-        <optgroup label="일식">
-            <option>초밥</option>
-            <option>우동</option>
-        </optgroup>
-    </select>
+        <section id="main-section">
+            <hr>
+            <h2>과제물</h2>
+            <span class="chapter-title">
+                <h3>챕터3</h3>
+            </span>
+            <ul>
+                <li class="inner-menu"><a href="chapter3/Text_Header.html">텍스트 헤더</a></li>
+                <li class="inner-menu"><a href="chapter3/3text_content.html">텍스트</a></li>
+                <li class="inner-menu"><a href="chapter3/nested_list.html">리스트</a></li>
+            </ul>
 
-    <hr>
-    <h2>시간표</h2>
-    <table border="1">
-        <thead>
-            <tr>
-                <th></th>
-                <th>월</th>
-                <th>화</th>
-                <th>수</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>오전</td>
-                <td></td>
-                <td>보안코딩</td>
-                <td>정보보호개론</td>
-            </tr>
-            <tr>
-                <td>오후</td>
-                <td>데이터베이스</td>
-                <td>프론트엔드웹개발</td>
-                <td>이산수학</td>
-            </tr>
-        </tbody>
-    </table>
+            <span class="chapter-title">
+                <h3>챕터4</h3>
+            </span>
+            <ul>
+                <li class="inner-menu"><a href="chapter4/form_basic.html">기본 입력양식</a></li>
+                <li class="inner-menu"><a href="chapter4/space_block.html">공간 블록 분할</a></li>
+                <li class="inner-menu"><a href="chapter4/nested_list.html">리스트</a></li>
+            </ul>
 
-    <hr>
-    <footer>
-        <h4>2026100269 1학년 2반 김다솔</h4>
-    </footer>
+            <span class="chapter-title">
+                <h3>챕터5</h3>
+            </span>
+            <ul>
+                <li class="inner-menu"><a href="chapter5/selector_tagidclass.html">선택자 태그, ID, 클래스</a></li>
+                <li class="inner-menu"><a href="chapter5/desc_descendants.html">후손 선택자, 자식 선택자</a></li>
+                <li class="inner-menu"><a href="chapter5/etc_action.html">반응 선택자</a></li>
+            </ul>
+        </section>
 
+        <hr>
+        <h2>오늘의 저녁 메뉴 추천</h2>
+        <select>
+            <optgroup label="한식">
+                <option>비빔밥</option>
+                <option>된장찌개</option>
+                <option>제육볶음</option>
+            </optgroup>
+            <optgroup label="양식">
+                <option>피자</option>
+                <option>파스타</option>
+            </optgroup>
+            <optgroup label="일식">
+                <option>초밥</option>
+                <option>우동</option>
+            </optgroup>
+        </select>
+
+        <hr>
+        <h2>전공 시간표</h2>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>월</th>
+                    <th>화</th>
+                    <th>수</th>
+                    <th>목</th>
+                    <th>금</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>오전</td>
+                    <td></td>
+                    <td>보안코딩</td>
+                    <td>정보보호개론</td>
+                </tr>
+                <tr>
+                    <td>오후</td>
+                    <td>데이터베이스</td>
+                    <td>프론트엔드웹개발</td>
+                    <td>이산수학</td>
+                </tr>
+            </tbody>
+        </table>
+        </section>
+
+        <hr>
+        <footer>
+            <h3>2026100269 1학년 2반 김다솔</h3>
+        </footer>
 
 </body>
 
