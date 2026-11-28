@@ -4,269 +4,328 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-    <title>ch8_layout_stylesheet</title>
+    <title>HTML5 Basic Page</title>
     <style>
-        .outer-menu-item {
-            border-width: thick;
-            border-style: dashed;
-            border-color: grey;
-            border-radius: 35px;
-        }
-
-        @media screen and (max-width: 768px) {
-            .master-title {
-                background-color: lightcyan;
-            }
-        }
-
-        @media screen and (min-width: 769px) and (max-width: 990px) {
-            .master-title {
-                background-color: lightgoldenrodyellow;
-            }
-        }
-
-        @media screen and (min-width: 991px) {
-            .master-title {
-                background-color: lavender;
-            }
-        }
-
-        body {
-            background-image: url("https://r2.chiikawa-wallpaper.com/wallpaper/20260930/200533a8b5cd3b95da5f2766baa57f79.png");
-            background-size: 200px 250px;
-            background-repeat: no-repeat;
-            background-attachment: fixed;
-            background-position: bottom left;
-        }
-
-
         * {
             margin: 0;
             padding: 0;
+            font-family: '맑은 고딕', 'Malgun Gothic', Gothic, sans-serif;
         }
 
-        .main-title {
+        a {
+            text-decoration: none;
+        }
+
+        li {
+            list-style: none;
+        }
+    </style>
+
+    <style>
+        .pull-left {
+            float: left;
+        }
+
+        .pull-right {
+            float: right;
+        }
+    </style>
+    <style>
+        body {
+            width: 960px;
             margin: 0 auto;
-            width: 1460px;
+            background: #E6E6E6;
         }
 
+        #page-wrapper {
+            background: white;
+            margin: 40px 0;
+            padding: 10px 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 6px rgba(100, 100, 100, 0.3);
+        }
+    </style>
+    <style>
         #main-header {
-            margin: 0 auto;
-            width: 100%;
-            max-width: 1460px;
-            margin-bottom: 20px;
-        }
-
-        #main-nav {
-            margin: 0 auto;
-            width: 100%;
-            max-width: 1460px;
-            margin-bottom: 30px;
-        }
-
-        #main-section {
-            margin: 0 auto;
-            width: 100%;
-            max-width: 1460px;
-            margin-bottom: 30px;
-        }
-
-
-
-        #main-footer {
-            margin: 0 auto;
-            width: 100%;
-            max-width: 1460px;
-            margin-top: 30px;
-            margin-bottom: 30px;
-        }
-
-        #main-aside {
-            margin: 0 auto;
-            width: 100%;
-            max-width: 1460px;
-            margin-bottom: 20px;
-        }
-
-
-        p {
-            margin-bottom: 20px;
+            padding: 40px 50px;
         }
 
         .master-title {
             font-size: 30px;
-            ;
-            text-align: center;
-            padding: 10px;
+            color: #181818;
         }
 
-        .menu {
-            position: fixed;
-            left: 20px;
-            top: 100px;
-            display: flex;
-            flex-direction: column;
-            width: 150px;
-            background-color: rgb(255, 245, 250);
-            padding: 10px;
+        .master-description {
+            font-size: 15px;
+            font-weight: 500;
+            color: #383838;
         }
-
-        .menu a {
-            padding: 15px;
-            font-size: 20px;
-            text-decoration: none;
-            color: black;
-            border-bottom: 1px solid black;
-        }
-
-        .menu a:hover {
-            background-color: lightblue;
-        }
-
-        @media screen and (max-width: 1280px) {
-            body {
-                width: auto;
-            }
-            .menu {
-               position: static;
-               width: 360px;
-               float: none;
-            }
-        }
-
-        hr {
-            display: none;
-        }
-
-        .nametag {
-            position: absolute;
-            left: 40%; 
-            text-align: center;
-            font-size: 16px;
-            color: black;
-            width: 180px;
-            height: 60px;
-            background-color:azure;
-            border: 2px solid black;
-            border-radius: 10px;
-            box-shadow: 5px 5px 5px gray;
-        }
-
-        .nametag > p {
-            display: block;
-            line-height: 60px;
-        }
-
-
     </style>
+
+    <style>
+        #main-navigation {
+            border-top: 1px solid #C8C8C8;
+            border-bottom: 1px solid #C8C8C8;
+            margin-bottom: 20px;
+            height: 40px;
+        }
+
+        .outer-menu-item {
+            float: left;
+            position: relative;
+        }
+
+        .outer-menu-item:hover {
+            background: black;
+            color: white;
+        }
+
+        .menu-title {
+            display: block;
+            height: 30px;
+            line-height: 30px;
+            text-align: center;
+            padding: 5px 20px;
+        }
+
+        .inner-menu {
+            display: none;
+            position: absolute;
+            top: 40px;
+            left: 0;
+            width: 100%;
+            background: white;
+            box-shadow: 0 2px 6px rgba(5, 5, 5, 0.9);
+            z-index: 1000;
+            text-align: center;
+        }
+
+        .inner-menu-item>a {
+            display: block;
+            padding: 5px 10px;
+            color: black;
+        }
+
+        .inner-menu-item>a:hover {
+            background: black;
+            color: white;
+        }
+    </style>
+
+    <style>
+        .search-bar {
+            height: 26px;
+            padding: 7px;
+        }
+
+        .input-search {
+
+            display: block;
+            float: left;
+            background-color: #FFFFFF;
+            border: 1px solid #CCCCCC;
+            border-radius: 15px 0 0 15px;
+            box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+            width: 120px;
+            height: 24px;
+            padding: 0 0 0 10px;
+            font-size: 12px;
+            color: #555555;
+        }
+
+        .input-search:focus {
+            border-color: rgba(82, 168, 236, 0.8);
+            outline: 0;
+            box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+        }
+
+        .input-search-submit {
+            display: block;
+            float: left;
+            width: 50px;
+            height: 26px;
+            border-radius: 0 15px 15px 0;
+            border: 1px solid #CCCCCC;
+            margin-left: -1px;
+            vertical-align: top;
+            display: inline-block;
+        }
+    </style>
+
+    <style>
+        #content {
+            overflow: hidden;
+        }
+
+        #main-section {
+            float: left;
+            width: 710px;
+        }
+
+        #main-aside {
+            float: right;
+            width: 200px;
+        }
+    </style>
+
+    <style>
+        article {
+            padding: 0 10px 20px 10px;
+            border-bottom: 1px solid #C8C8C8;
+        }
+
+        .article-header {
+            padding: 20px 0;
+        }
+
+        .article-title {
+            font-size: 25px;
+            font-weight: 500;
+            padding-bottom: 10px;
+        }
+
+        .article-date {
+            font-size: 13px;
+        }
+
+        .article-body {
+            font-size: 14px;
+        }
+    </style>
+    <style>
+        .aside-list {
+            padding: 10px 0 30px 0;
+        }
+
+        .aside-list > h3 {
+            font-size: 15px;
+            font-weight: 600;
+        }
+
+        .aside-list li a {
+            margin-left: 8px;
+            font-size: 13px;
+            color: #6C6C6C;
+        }
+    </style>
+    <script></script>
+    <script></script>
+    </style>
+
+
 </head>
 
 <body>
     <div id="page-wrapper">
         <header id="main-header">
             <hgroup>
-                <h1 class="master-title">header</h1>
+                <h1 class="master-title">HTML5 Example Preview</h1>
+                <h2 class="master-description">한빛아카데미</h2>
             </hgroup>
         </header>
-        <div>
-            <hr>
-            <nav id="main-nav">
-                <div class="nav-wrapper">
-                    <ul class="outer-menu">
-                        <li class="outer-menu-item">
-                            <h2>navigation</h2>
-                            <ul class="inner-menu">
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                                    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                                    Duis
-                                    aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-                                    nulla
-                                    pariatur.
-                                    Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-                                    mollit anim id est laborum.</p>
-                            </ul>
-                        </li>
-                    </ul>
-                    </ul>
+        <nav id="main-navigation">
+            <div class="pull-left">
+                <ul class="outer-menu">
+                    <li class="outer-menu-item">
+                        <span class="menu-title">HTML5</span>
+                        <ul class="inner-menu">
+                            <li class="inner-menu-item"><a href="#">데이터</a></li>
+                            <li class="inner-menu-item"><a href="#">데이터</a></li>
+                        </ul>
+                    </li>
+                    <li class="outer-menu-item">
+                        <span class="menu-title">CSS3</span>
+                        <ul class="inner-menu">
+                            <li class="inner-menu-item"><a href="#">데이터</a></li>
+                            <li class="inner-menu-item"><a href="#">데이터</a></li>
+                            <li class="inner-menu-item"><a href="#">데이터</a></li>
+                        </ul>
+                    </li>
+                    <li class="outer-menu-item">
+                        <span class="menu-title">JavaScript</span>
+                        <ul class="inner-menu">
+                            <li class="inner-menu-item"><a href="#">데이터</a></li>
+                            <li class="inner-menu-item"><a href="#">데이터</a></li>
+                            <li class="inner-menu-item"><a href="#">데이터</a></li>
+                            <li class="inner-menu-item"><a href="#">데이터</a></li>
+                            <li class="inner-menu-item"><a href="#">데이터</a></li>
+                            <li class="inner-menu-item"><a href="#">데이터</a></li>
+                            <li class="inner-menu-item"><a href="#">데이터</a></li>
+                            <li class="inner-menu-item"><a href="#">데이터</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div class="pull-right">
+                <div class="search-bar">
+                    <form>
+                        <input type="text" class="input-search">
+                        <button type="submit" class="input-search-submit" value="검색">
+                    </form>
                 </div>
-
-            </nav>
-
-            <div class="menu">
-                <a href="#">메뉴1</a>
-                <a href="#">메뉴2</a>
-                <a href="#">메뉴3</a>
             </div>
 
-
-            <hr>
+        </nav>
+        <div id="content">
             <section id="main-section">
-                <div class="section-wrapper">
-                    <h1 class="master-title">section</h1>
-                </div>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Nam hendrerit nisi sed sollicitudin pellentesque. Nunc posuere purus rhoncus pulvinar aliquam. Ut
-                    aliquet tristique nisl vitae volutpat. Nulla aliquet porttitor venenatis.
-                    Donec a dui et dui fringilla consectetur id nec massa.Ex exercitation ex non anim nisi consectetur
-                    qui laboris sit officia adipiscing tempor cupidatat.
-                    Est tempor culpa qui in consectetur tempor. Velit quis deserunt exercitation consequat cupidatat sit
-                    id et.</p>
-                <p>Duis ullamco sit irure laboris ex commodo dolore.
-                    Cupidatat fugiat ad qui aute minim mollit consectetur consequat mollit tempor cupidatat enim.
-                    Commodo sit sit sunt ea.
-
-                    Excepteur ipsum mollit est veniam voluptate ad do do est voluptate labore quis sed. Incididunt
-                    aliquip sint anim nisi occaecat laborum consectetur ipsum nostrud eiusmod dolor fugiat irure.
-                    Dolore do laborum labore aliqua sit lorem officia ut sed. Id aute proident voluptate eiusmod mollit
-                    id amet irure et sunt consectetur. Amet occaecat sunt enim qui.</p>
-
-                <p>Curabitur id vulputate metus. Curabitur tristique nibh eget leo porttitor, et dapibus risus porta.
-                    Nam ut consectetur libero, sed tristique mi.
-                    Fusce scelerisque justo id erat porttitor, vitae lacinia enim pellentesque. Nullam diam purus,
-                    laoreet et ultricies vitae, dapibus vel diam. Cras eu euismod diam, vel dapibus est.
-                    Nam eget nisl facilisis, aliquam dui vel, placerat lacus. Proin id tempor augue. Curabitur eget
-                    ligula mollis, tempus neque vestibulum, tempus nibh. Aliquam sed nulla et erat suscipit facilisis id
-                    vitae est.
-                    Mauris bibendum imperdiet mi, ut tempus sem semper ac. Ut elementum nisl quis vulputate rutrum.
-                    Donec sodales dui nunc, quis egestas ipsum tempor at. Phasellus imperdiet neque eget placerat
-                    molestie.
-                    Phasellus efficitur elementum arcu, iaculis egestas justo rhoncus quis.</p>
-
-
+                <article>
+                    <div class="article-heder">
+                        <h1 class="article-title">HTML5 개요와 활용</h1>
+                        <p class="article-date">2023년 5월 22일</p>
+                    </div>
+                    <div class="article-body">
+                        <img src="http://via.placeholder. com/430x280">
+                        <br>
+                        <br>
+                        <p>Lorem ipsum dolor sit amet. </p>
+                        <br>
+                        <p>Proin ut fringilla sapien..</p>
+                    </div>
+                </article>
+                <article>
+                    <div class="article-header">
+                        <h1 class="article-title">HTML5 응용과 실습</h1>
+                        <p class="article-date">2023년 05월 24일</p>
+                    </div>
+                    <div class="article-body">
+                        <img src="http://via.placeholder. com/430x280">
+                        <br>
+                        <p>Lorem ipsum dolor sit amet.</p>
+                        <br>
+                        <p>Proin ut fringilla sapien.</p>
+                    </div>
+                </article>
             </section>
             <aside id="main-aside">
-                <div class="aside-wrapper">
-                    <h1 class="master-title">aside</h1>
+                <div class="aside-list">
+                    <h3>카테고리</h3>
+                    <ul>
+                        <li><a href="#">데이터</a></li>
+                        <li><a href="#">데이터</a></li>
+                        <li><a href="#">데이터</a></li>
+                        <li><a href="#">데이터</a></li>
+                        <li><a href="#">데이터</a></li>
+
+                    </ul>
                 </div>
-                <p>Aliquam erat volutpat.
-                    Sed ut dui ut lacus dictum fermentum vel tincidunt neque. Sed sed lacinia lectus. Duis sit amet
-                    sodales felis. Duis nunc eros,
-                    mattis at dui ac, convallis semper risus. In adipiscing ultrices tellus, in suscipit massa vehicula
-                    eu.</p>
-                <p>Cras pellentesque metus sit amet mattis ornare. Quisque consequat sit amet eros a pellentesque.
-                    Donec id nisl ligula. Mauris at viverra dolor. Quisque ut orci convallis, semper nibh vitae, egestas
-                    quam. Cras id ligula feugiat, ullamcorper odio sit amet, rutrum massa.</p>
+                <div class="aside-list">
+                    <h3>최근 글</h3>
+                    <ul>
+                        <li><a href="#">데이터</a></li>
+                        <li><a href="#">데이터</a></li>
+                        <li><a href="#">데이터</a></li>
+                        <li><a href="#">데이터</a></li>
+
+                    </ul>
+                </div>
             </aside>
-
-            <hr>
-            <footer id="main-footer">
-                <div class="footer-wrapper">
-                    <h1 class="master-title">footer</h1>
-                </div>
-                <p>Sit cupidatat eiusmod ea irure eiusmod aute nisi. Sunt culpa veniam commodo magna. Elit laboris
-                    cillum anim ullamco nisi sed.
-                    Minim sint veniam lorem exercitation. Irure do laborum aliqua nisi cupidatat exercitation pariatur
-                    minim ad est excepteur veniam.
-                    Mollit ipsum aliqua enim eiusmod do incididunt exercitation sunt.Generally, lorem ipsum is best
-                    suited to keeping templates from looking bare or minimizing the
-                    distractions of draft copy.</p>
-
-                    <div class="nametag">
-                        <p>2026100269 김다솔</p>
-                    </div>
-            </footer>
         </div>
+        <footer id="main-footer">
+            <a href="#">ITCookBook HTML5 Programming</a>
+        </footer>
+    </div>
+
+
 
 </body>
 
